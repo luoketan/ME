@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Ether | Web3 & AI Space</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azure: {
+                            50: '#f0f9ff', // 背景极浅蓝
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9', // 核心亮蓝
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e', // 深海军蓝文字
+                            950: '#082f49',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0ea5e9;
+            --bg-blue: #f0f9ff;
+        }
+
+        body {
+            background-color: var(--bg-blue);
+            font-family: 'Space Grotesk', sans-serif;
+            color: #082f49; /* Azure 950 */
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* 动态深蓝星云背景 */
+        .nebula-blue {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
+            filter: blur(70px);
+            z-index: -1;
+            animation: drift 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes drift {
+            from { transform: scale(1) rotate(0deg); }
+            to { transform: scale(1.1) rotate(5deg); }
+        }
+
+        /* 冷光磨砂玻璃 */
+        .azure-glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border-left: 1px solid rgba(14, 165, 233, 0.2);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .azure-glass:hover {
+            background: rgba(240, 249, 255, 0.6);
+            padding-left: 2.5rem;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.2);
+        }
+
+        /* 垂直文字装饰 */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        /* 汉字书法美感 */
+        .zh-font { font-family: 'ZCOOL XiaoWei', serif; }
+
+        .image-glow-blue {
+            box-shadow: 0 0 50px rgba(14, 165, 233, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nebula-blue"></div>
+
+    <div class="fixed left-8 top-0 h-full w-[1px] bg-azure-200/50 hidden md:block"></div>
+
+    <main class="relative min-h-screen max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row gap-20 items-start">
+        
+        <div class="md:w-1/3 w-full sticky top-20 z-10">
+            <div class="relative inline-block group">
+                <div class="absolute -inset-4 bg-azure-300/30 rounded-full blur-3xl opacity-60 group-hover:opacity-80 transition-opacity animate-pulse"></div>
+                <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=SkyWalker" alt="Avatar" class="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover image-glow-blue grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+            
+            <div class="mt-12 space-y-2">
+                <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-azure-950">AZURE.</h1>
+                <div class="h-1 w-24 bg-azure-500"></div>
+                <p class="text-sm uppercase tracking-[0.4em] text-azure-800/60 font-bold pt-4">Web3 & AI Architect</p>
+            </div>
+
+            <div class="mt-20 flex items-center gap-4 group cursor-pointer">
+                <div class="w-12 h-12 border border-azure-200 rounded-full flex items-center justify-center group-hover:bg-azure-500 group-hover:text-white transition-all bg-azure-50/50">
+                    <i data-lucide="waves" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-azure-400 italic">Soundscape</p>
+                    <p class="text-sm font-medium text-azure-900">Deep Sea Frequency - 432Hz</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:w-2/3 w-full space-y-16 pb-20 pt-10 md:pt-0">
+            
+            <section class="max-w-2xl">
+                <h2 class="zh-font text-3xl md:text-5xl text-azure-900 leading-snug mb-8">
+                    在数字以太的深处，<br>构建理性的静谧之地。
+                </h2>
+                <p class="text-azure-900/70 leading-loose text-lg font-light">
+                    我是游走于链上世界的构建者，也是 AI 奇点前的观察员。这片蓝色空间是我存放逻辑与灵感的数字港湾，远离喧嚣，专注于本质。
+                </p>
+            </section>
+
+            <div class="space-y-6">
+                <a href="https://x.com/lylzb48118747" target="_blank" class="azure-glass block p-8 rounded-r-3xl group flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-azure-500 tracking-[0.3em] uppercase mb-2 block">Social Layer</span>
+                        <h3 class="text-2xl font-bold text-azure-950 flex items-center gap-3">
+                            TWITTER / X
+                            <i data-lucide="twitter" class="w-5 h-5 text-azure-400"></i>
+                        </h3>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-azure-500 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+
+                <a href="https://t.me/yiqlfwem" target="_blank" class="azure-glass block p-8 rounded-r-3xl group flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-azure-500 tracking-[0.3em] uppercase mb-2 block">Encrypted Chat</span>
+                        <h3 class="text-2xl font-bold text-azure-950 flex items-center gap-3">
+                            TELEGRAM
+                            <i data-lucide="send" class="w-5 h-5 text-azure-400"></i>
+                        </h3>
+                    </div>
+                    <i data-lucide="arrow-right" class="w-6 h-6 text-azure-500 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-12">
+                <div class="border-l-2 border-azure-100 pl-8 py-2">
+                    <h4 class="text-xs font-bold text-azure-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i data-lucide="box" class="w-4 h-4"></i> On-Chain Identity
+                    </h4>
+                    <p class="font-mono text-xl text-azure-900 font-bold tracking-tight">yiqlfwem.eth</p>
+                    <p class="text-xs text-azure-700/50 mt-2 uppercase font-medium tracking-wider">Deployed across L2s</p>
+                </div>
+                <div class="border-l-2 border-azure-100 pl-8 py-2">
+                    <h4 class="text-xs font-bold text-azure-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <i data-lucide="brain-circuit" class="w-4 h-4"></i> Current Focus
+                    </h4>
+                    <p class="text-base italic text-azure-900/80 leading-relaxed">"探索 LLM 在零知识证明 (ZKP) 生成中的辅助作用。"</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-12 opacity-60 mix-blend-multiply">
+        <span class="vertical-text text-xs font-bold uppercase tracking-[0.5em] text-azure-300">Blue Horizon Labs</span>
+        <div class="w-[1px] h-32 bg-gradient-to-b from-azure-200 to-transparent"></div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // 更加微妙的视差滚动效果
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const nebula = document.querySelector('.nebula-blue');
+            nebula.style.transform = `translateY(${scrolled * 0.05}px) scale(${1 + scrolled * 0.0002})`;
+            nebula.style.opacity = `${1 - scrolled * 0.0005}`;
+        });
+    </script>
+</body>
+</html>
